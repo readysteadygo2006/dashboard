@@ -7,7 +7,7 @@
             <p class="text-warning">Your username and password didn't match. Please try again.</p>
 	{% endif %}
 	    
-	<form role="form" class="form-horizontal" method="post" action="{% url 'boardgames_login' %}">
+	<form role="form" class="form-horizontal" method="post" action="{% url 'dashboard_login' %}">
 	    {% csrf_token %}
 	    {{ form }}
 	    <input class="btn btn-primary" type="submit" value="Login" />

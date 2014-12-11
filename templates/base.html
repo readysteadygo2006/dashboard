@@ -41,9 +41,9 @@
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
             {% if user.is_authenticated %}
-                <li><a href="{% url 'boardgames_logout' %}">Logout</a></li>
+                <li><a href="{% url 'dashboard_logout' %}">Logout</a></li>
             {% else %}
-                <li><a href="{% url 'boardgames_login' %}">Login</a></li>  
+                <li><a href="{% url 'dashboard_login' %}">Login</a></li>
             {% endif %}
           </ul>
       </div>
