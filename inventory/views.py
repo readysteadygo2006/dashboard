@@ -8,4 +8,4 @@ def home(request):
 
 
 def away(request):
-    return HttpResponse("Hello, Away World!")
+    return HttpResponse("Away, World!")
