@@ -10,23 +10,25 @@ class Playbook(models.Model):
     name = models.CharField(max_length=300)
     description = models.CharField(max_length=300)
     def __str__(self):
-        return "PB:{0}".format(self.name)
+        return "Pb: {0}".format(self.name)
 
 class Role(models.Model):
     name = models.CharField(max_length=300)
     description = models.CharField(max_length=300)
     def __str__(self):
-        return "ROLE:{0}".format(self.name)
+        return "R: {0}".format(self.name)
 
 class Inventory(models.Model):
     name = models.CharField(max_length=300)
+    def __str__(self):
+        return "INV: {0}".format(self.name)
 
 class Machine(models.Model):
     name = models.CharField(max_length=300)
     ip = models.CharField(max_length=300)
     member_of = models.ForeignKey(Inventory, related_name="has_member")
     def __str__(self):
-        return "M:{0}".format(self.name)
+        return "M: {0}".format(self.name)
 
 
 class PlaybookStatus(models.Model):
@@ -36,7 +38,7 @@ class PlaybookStatus(models.Model):
     machine = models.ForeignKey(Machine, related_name="playbook_history")
     execOptions = models.CharField(max_length=300)
     def __str__(self):
-        return "{0} : {1}".format(self.playbook, self.date)
+        return "PbS: {0} : {1}".format(self.playbook, self.date)
 
 class RoleStatus(models.Model):
     date = models.DateTimeField()
@@ -45,7 +47,7 @@ class RoleStatus(models.Model):
     machine = models.CharField(max_length=300)
     execOptions = models.CharField(max_length=300)
     def __str__(self):
-        return "{0} : {1}".format(self.playbook, self.date)
+        return "RS{0} : {1}".format(self.playbook, self.date)
 
 
 
